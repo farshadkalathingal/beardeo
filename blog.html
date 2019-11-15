@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+	<link rel="icon" href="img/new logo.png">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>beardeo</title>
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/theme.css" rel="stylesheet">
+<link href="css/blog.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="fonts/open-sans.css" rel="stylesheet" type="text/css">
+<link href="fonts/montserrat.css" rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+
+    <![endif]-->
+	
+	<script src="js/aes.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+    $("#myTab a").click(function(e){
+    	e.preventDefault();
+    	$(this).tab('show');
+    });
+});
+</script>
+</head>
+<body ng-app = "BeardApp" ng-controller="loginCtrl" class="page1" data-spy="scroll" data-offset="60" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle position-left" data-toggle="collapse" data-target=".navbar-main-collapse">
+		<i class="fa fa-bars"></i>
+		</button>
+		<a class="navbar-brand page-scroll" style="margin-left: 5%;" href="#" onclick="showHomePage()">
+		beardeo </a>
+	</div>
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+		<ul class="nav navbar-nav">
+			<li>
+			<a href="#" onclick="showHomePage()">Home</a>
+			</li>
+			<li>
+			<a href="#" onclick="showBlogPage()">Blog</a>
+			</li>
+			<li>
+			<a href="#" onclick="showContactPage()">Contact</a>
+			</li>
+			<li>
+			<a href="#" onclick="showAboutPage()">About</a>
+			</li>
+      </ul>
+	</div>
+	<!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+<header class="intro">
+<div class="intro-body">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1 class="brand-heading">beardeo.</h1>
+				<p class="intro-text">
+					blog
+				</p>
+				<a href="#about" class="btn btn-circle page-scroll">
+				<i class="fa fa-angle-double-down animated"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+<section id="about">
+<div class="container-fluid content-section text-center">
+	<div class="row slideanim">
+		<ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#article">ARTICLE</a></li>
+    <li><a href="#videos">VIDEOS</a></li>
+	<li><a href="#photos">GALLERY</a></li>
+  </ul>
+	  <div class="tab-content">
+        <div id="article" class="tab-pane fade in active">
+		<h2 style="padding: 5%;">RECOMMENDED READING</h2>
+		<div class="col-lg-10 col-lg-offset-1">
+            <div class="row slideanim">
+			 <div class="col-lg-4 col-md-4 col-sm-4">
+				
+            <a  style="font-size: 15px;" href="#" onclick="showTipsPage()"><img src="img/b4.jpg"></img><h5>The Ultimate Guide to Grow Your Beard</h5></a>
+			</div>
+           <div class="col-lg-4 col-md-4 col-sm-4">
+				
+            <a  style="font-size: 15px;" href="#" onclick="showOilPage()"><img src="img/oil2.jpg"></img><h5>Beard Oil and Its Use</h5></a>
+            </div>
+           <div class="col-lg-4 col-md-4 col-sm-4">
+					
+            <a  style="font-size: 15px;" href="#" onclick="showWashPage()"><img src="img/wash4.jpg"></img><h5>What is Beard Wash?</h5></a>
+                </div>
+               </div>
+			<div class="row slideanim">
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					
+            <a  style="font-size: 15px;" href="#" onclick="showBalmPage()"><img src="img/oibalm.jpg"></img><h5>Difference Between Beard Oil and Beard Balm</h5></a>
+                </div>
+            
+           
+                <div class="col-lg-4 col-md-4 col-sm-4">
+            <a  style="font-size: 15px;" href="#" onclick="showHairPage()"><img src="img/longbeard.jpg"></img><h5>Beard Hair Falling Out</h5></a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+            <a  style="font-size: 15px;" href="#" onclick="showCurlyPage()"><img src="img/curlybeard.jpg"></img><h5>Curly Beard</h5></a>
+                </div>
+			</div>
+			<div class="row slideanim">
+           <div class="col-lg-4 col-md-4 col-sm-4">
+            <a  style="font-size: 15px;" href="#" onclick="showHabitPage()"><img src="img/habit.jpg"></img><h5>Bad Beard Habbit</h5></a>
+                </div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+            <a  style="font-size: 15px;" href="#" onclick="showFoodPage()"><img src="img/grocery.jpg"></img><h5>Food for Beard Growth</h5></a>
+                </div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					 <a  style="font-size: 15px;" href="#" onclick="showBlowPage()"><img src="img/blow.jpg"></img><h5>Blow Dry Beard</h5></a>
+				</div>
+            </div>
+		</div>
+		</div>
+		 <div id="videos" class="tab-pane fade">
+			 <h2 style="padding: 5%;">RECOMMENDED VIDEOS</h2>
+		<div class="col-lg-10 col-lg-offset-1">
+            <div class="row slideanim">
+			 <div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Grow a Beard</h3>
+				<a href="https://www.youtube.com/watch?v=XPak7z9lzRg"><img src="img/pic(2).jpg"></a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Beard Trim</h3>
+				<a href="https://www.youtube.com/watch?v=RQ5MxRkFIeY"><img src="img/pic(7).jpg"></a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Summer Beard</h3>
+				<a href="https://www.youtube.com/watch?v=lwLU149FOVM"><img src="img/pic(9).jpg"></a>
+				</div>
+	</div>
+	<div class="row slideanim">
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Beard Shape & Style</h3>
+				<a href="https://www.youtube.com/watch?v=9bMeCVtDvHg"><img src="img/pic(3).jpg"></a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Losing Beard Hairs</h3>
+				<a href="https://www.youtube.com/watch?v=a_ucCXSX1oQ"><img src="img/pic(6).jpg"></a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Worst Beard Habbit</h3>
+				<a href="https://www.youtube.com/watch?v=smzusRh5vAU"><img src="img/pic(4).jpg"></a>
+				</div>
+	</div>
+	<div class="row slideanim">
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Safe Beard Trim</h3>
+				<a href="https://www.youtube.com/watch?v=IVh7rTlnnHQ"><img src="img/pic(8).jpg"></a>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Apply Beard Oil</h3>
+				<a href="https://www.youtube.com/watch?v=cRnhOtRn1a0"><img src="img/pic(1).jpg"></a>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4">
+				<h3 style="margin-top: 5%;">Beard Panic Mode</h3>
+				<a href="https://www.youtube.com/watch?v=KgCl1C8-ViM"><img src="img/pic(0).jpg"></a>
+				</div>
+		 </div>
+		</div>
+		</div>
+
+<div id="photos" class="tab-pane fade">
+			 <h2 style="padding: 5%;">GALLERY OF PHOTOS</h2>
+	<div class="container gal-container slideanim">
+    <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#1">
+          <img src="img/1.jpg">
+        </a>
+        <div class="modal fade" id="1" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/1.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the first one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#2">
+          <img src="img/2.jpg">
+        </a>
+        <div class="modal fade" id="2" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/2.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the second one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#3">
+          <img src="img/3.jpg">
+        </a>
+        <div class="modal fade" id="3" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/3.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the third one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#4">
+          <img src="img/4.jpg">
+        </a>
+        <div class="modal fade" id="4" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/4.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the fourth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#5">
+          <img src="img/5.jpg">
+        </a>
+        <div class="modal fade" id="5" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/5.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the fifth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="col-md-8 col-sm-12 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#6">
+          <img src="img/7.jpg">
+        </a>
+        <div class="modal fade" id="6" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/7.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the sixth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#7">
+          <img src="img/6.jpg">
+        </a>
+        <div class="modal fade" id="7" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/6.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the seventh one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#8">
+          <img src="img/8.jpg">
+        </a>
+        <div class="modal fade" id="8" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/8.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the eigth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#9">
+          <img src="img/9.jpg">
+        </a>
+        <div class="modal fade" id="9" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/9.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the nineth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#10">
+          <img src="img/10.jpg">
+        </a>
+        <div class="modal fade" id="10" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="img/10.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the tenth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+		</div>
+
+
+	</div>
+</div>
+</section>
+<footer>
+<div class="container text-center">
+	<p class="credits">
+	<strong>Copyright &copy; 2017 <a href="">Registered</a>.</strong> All rights
+    reserved.
+	</p>
+</div>
+</footer>
+<script src="js/page.js"></script>
+<script src="js/angular.min.js"></script>
+	    <script src="js/ngStorage.min.js"></script>
+		<script src="js/ngStorage.js"></script>
+	  <script src="js/app.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+ <script src="dist/sweetalert.min.js"></script>
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<!-- Contact JavaScript -->
+<script src="js/validate.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/theme.js"></script>
+</body>
+</html>

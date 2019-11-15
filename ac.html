@@ -1,0 +1,110 @@
+<html>
+      <head>
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+<body>
+<div class="row">
+
+     <div class="large-9 column">
+         <div class="accordion" >
+             <div class="accordion-head">
+                title 1<div class="arrow down"> </div>
+
+             </div>
+             <div class="accordion-body">
+                   <p>Lorem Ipsum is sfnti nting and typesetting industry dummy text o g and typesetting industry.</p>
+             </div>
+             <div class="accordion-head">
+                 title 2<div class="arrow down"> </div>
+
+             </div>
+             <div class="accordion-body">
+                 <p>Lorem Ipsum is sfnti nting and typesetting industry dummy text o g and typesetting industry.</p>
+             </div>
+             <div class="accordion-head">
+                title 3<div class="arrow down"> </div>
+
+             </div>
+             <div class="accordion-body">
+                 <p>Lorem Ipsum is sfnti nting and typesetting industry dummy text o g and typesetting industry.</p>
+             </div>
+             <div class="accordion-head">
+                 title 4<div class="arrow down"> </div>
+
+             </div>
+             <div class="accordion-body">
+                 <p>Lorem Ipsum is sfnti nting and typesetting industry dummy text o g and typesetting industry.</p>
+             </div>
+             <div class="accordion-head">
+                 title 5<div class="arrow down"> </div>
+
+             </div>
+             <div class="accordion-body">
+                 <p>Lorem Ipsum is sfnti nting and typesetting industry dummy text o g and typesetting industry.</p>
+             </div>
+         </div>
+        </div>
+</div>
+
+
+<style>
+    .accordion {
+    width: 100%;
+    
+}
+.accordion .accordion-head {
+   
+    position: relative;
+    padding: 13px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.accordion .accordion-head * {
+    cursor: pointer;
+}
+
+.accordion1 .accordion-body {
+    border-bottom: 1px solid #000;
+    padding: 20px;
+    height: auto;
+    display: none;
+    @include medium-up {
+        display: block;
+    }
+}
+
+
+.arrow {
+    float: right;
+   
+    color:#007DBE !important;
+   
+ 
+}
+.accordion-head.open .arrow {
+  
+   -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+  
+}
+
+</style>
+
+
+<script>
+     $('.accordion').each(function () {
+            var $accordian = $(this);
+            $accordian.find('.accordion-head').on('click', function () {
+                $(this).removeClass('open').addClass('close');
+                $accordian.find('.accordion-body').slideUp();
+                if (!$(this).next().is(':visible')) {
+                    $(this).removeClass('close').addClass('open');
+                    $(this).next().slideDown();
+                }
+            });
+        });
+</script>
+</body>
+</html>

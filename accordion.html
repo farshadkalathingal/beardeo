@@ -1,0 +1,378 @@
+<html>
+    <head>
+        <script src="js/jquery-1.11.3.min.js"></script>
+        
+    </head>
+    <body>
+        <style>
+       /* Smartphones (portrait and landscape) ----------- */
+ @media only screen and (max-width : 640px) {
+    /* Styles */
+    div {
+        display:block;
+        padding:10px;
+ border:1px solid #544454;
+        margin:5px
+    }
+    .a {
+        display:none;
+               
+    }
+}
+/* Desktops and laptops ----------- */
+ @media only screen and (min-width : 640px) {
+    /* Styles */
+    .accordion {
+        display:none;
+               
+    }
+    .a {
+                
+        display:inline-block;
+        margin:10px;
+        width:80px;
+        height:40px;
+        border:1px solid green;
+    }
+}
+        </style>
+      
+    <div class="accordion" id="one">Beard+</div>
+<div id="on" class="a">A</div>
+<div id="on" class="a">B</div>
+<div id="on" class="a">C</div>
+<div id="on" class="a">D</div>
+<div id="on" class="a">E</div>
+<div class="accordion">Beard+</div>
+<div class="a">A</div>
+<div class="a">B</div>
+<div class="a">C</div>
+<div class="a">D</div>
+<div class="a">E</div>
+   
+    </body>
+    <script>
+    $(document).ready(function () {
+    $('.accordion').on('click', function () {
+        var i=$('.accordion').attr('id')
+       // if(i=="one"){
+        $('.a').slideToggle('fast');
+       // }
+    });
+});
+    </script>
+   <!-- <style>
+    /* Set box sizing to border-box */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+.table {
+	width: 100%;
+}
+
+.tr:first-child {
+	display: none;
+}
+
+.rh > span {
+	display: block;
+	position: relative;
+}
+
+/* Insert header name before each row on mobile */
+.td:before {
+	content: attr(data-header);
+	float: left;
+	width: 25%;
+}
+
+/* CSS border triangle trick */
+.table .rh > span:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 7px solid transparent;
+	border-top-color: black;
+	z-index: 2;
+	right: 15px;
+	top: 14px;
+	pointer-events: none;
+}
+
+/* Flip CSS border triangle on active */
+.table .rh.active > span:after {
+	border-top-color: transparent;
+	border-bottom-color: black;
+	top: 5px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+	.rh {
+		display: none;
+	}
+  
+	.table {
+		display: table;
+		width: 750px;
+	}
+
+	.thead {
+		display: table-header-group;
+	}
+
+	.tbody {
+		display: table-row-group;
+	}
+
+	.tr,
+	.tr:first-child {
+		display: table-row;
+	}
+
+	.th,
+	.td {
+		display: table-cell;
+	}
+
+	.td:before {
+		content: "";
+	}
+}
+
+
+
+
+
+
+
+
+/* ===========
+    Styling
+   =========== */
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.table {
+	border: 1px solid #54c3e8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-background-clip: padding-box; 
+	-moz-background-clip: padding; 
+	background-clip: padding-box;
+	overflow: hidden;
+}
+
+.th,
+.rh > span {
+	background: #74dbfc;
+}
+
+.tr .td:nth-child(even) {
+	background: #dcf4fc;
+}
+
+.th,
+.tr .td,
+.rh,
+.rh.active:nth-last-child(2) {
+	border-bottom: 1px solid #54c3e8;
+}
+
+.rh:nth-last-child(2) {
+	border-bottom: none;
+}
+
+.td {
+	padding: 5px 15px;
+}
+
+.rh > span {
+	padding: 5px 15px;
+	font-size: 1.25em;
+	font-weight: 600;
+}
+
+.tr:first-child,
+.tr:last-child {
+	border-bottom: none;
+}
+
+.tr:last-child .td:last-child {
+	border-bottom: none;
+}
+
+@media screen and (min-width: 420px) {
+	.th,
+	.td,
+	.tr,
+	.tr .td:last-child {
+		border-bottom: 1px solid #54c3e8;
+	}
+
+	.th,
+	.td {
+		padding: 5px;
+	}
+
+	.th {
+		border-right: 1px solid #00bfff;
+	}
+
+	.td {
+		border-right: 1px solid #54c3e8;
+	}
+
+	.th:last-child,
+	.td:last-child {
+		border-right: none;
+	}
+
+	/* Unfortunately we cannot just use :nth-child(odd/even) since the
+	   .rh elements are interspersed in there. Until CSS 4 I don't
+	   think there will be a way to style alterating rows for this 
+	   without using JavaScript or whatever builds the table to add
+	   a special class. */
+	.tr.alternate-highlight {
+		background: #dcf4fc;
+	}
+
+	/* Reset Mobile Styles */
+	.tr:last-child .td:first-child {
+		border-top: none;
+	}
+
+	.tr:last-child .td {
+		border-bottom: none;
+	}
+
+	.tr .td:nth-child(even) {
+		background: none;
+	}
+}
+</style>
+    <div class="table mobile-accordion">
+			 
+			  <div class="tbody">
+				    <div class="rh active"><span>Article</span></div>
+				    <div class="tr">
+										      <div class="td" >54321</div>
+										      <div class="td" >Jim</div>
+										      <div class="td" >Gordon</div>
+										      <div class="td" >123-4567</div>
+										      <div class="td" >jgordon@gothampd.gov</div>
+				    </div>
+				    <div class="rh"><span>Videoe</span></div>
+				    <div class="tr">
+										      <div class="td" >67890</div>
+										      <div class="td" >The</div>
+										      <div class="td" >Joker</div>
+										      <div class="td" >890-1234</div>
+										      <div class="td" >joker@iheartbatman.com</div>
+			    </div>
+		
+		</div>
+         <script>
+    $(document).ready(function () {
+	var maxMobileSize = 768; // this value should match the media query
+	var mobileAccordionTableSelector = ".table.mobile-accordion";
+
+
+	// Resize and Reorientation code borrowed and modified from this StackOverflow answer:
+	//		http://stackoverflow.com/a/6603537
+	var previousOrientation = window.orientation;
+
+	var checkOrientation = function() {
+	    if(window.orientation !== previousOrientation){
+	        previousOrientation = window.orientation;
+	        checkScreenSize();
+	    }
+	};
+
+	var checkScreenSize = function() {
+		var width = $(window).width();
+
+		if (width < maxMobileSize) {
+			handleMobile();
+		} else {
+			handleDesktop();
+		}
+	}
+
+	window.addEventListener("resize", checkScreenSize, false);
+	window.addEventListener("orientationchange", checkOrientation, false);
+
+	// Android doesn't always fire orientationChange on 180 degree turns
+	setInterval(checkOrientation, 2000);
+
+
+	function handleMobile() {
+		slideUpAllInactive();
+	}
+
+	function handleDesktop() {
+		showRows();
+		addRowHighlighting();
+	}
+
+	function showRows() {
+		$(mobileAccordionTableSelector + " .tr").each(function () {
+			$(this).removeAttr("style");
+		});
+	}
+
+	function addRowHighlighting() {
+		var rows = $(".table .tbody .tr");
+			
+		/* Add a highlighting class on even rows */
+		for (var i = 0; i < rows.length; i++) {
+			if (i % 2 == 1) {
+				$(rows[i]).addClass("alternate-highlight");
+			}
+		}
+	}
+
+	function slideUpAllInactive() {
+		$(".table .rh").not(".active").each(function() {
+			$(this).next().slideUp();
+		});
+	}
+
+	function handleMobileAccordionTableClick(rowHeader) {
+		var table = $(rowHeader).parents(".table");
+
+		$(table).find(".rh").each(function () {
+			$(this).removeClass("active");
+		});
+
+		slideUpAllInactive();
+
+		var nextRow = $(rowHeader).next();
+		if (!nextRow.is(":visible")) {
+			$(rowHeader).addClass("active");
+			nextRow.slideDown();
+		}
+	}
+
+	$(mobileAccordionTableSelector + " .rh").click(function () {
+		handleMobileAccordionTableClick(this);
+	});
+
+	// Need to run this on first load
+	checkScreenSize();
+});
+</script>
+    </body>-->
+   
+</html>
