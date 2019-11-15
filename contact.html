@@ -21,7 +21,7 @@
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <script src="js/jquery-1.11.3.min.js"></script>
 </head>
-<body ng-app = "BeardApp" ng-controller="feedbackCtrl" class="page1" data-spy="scroll" data-offset="60" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body class="page1" data-spy="scroll" data-offset="60" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 <div class="container">
@@ -76,12 +76,12 @@
 <div class="container content-section">
 	<div class="row slideanim">
 		<div class="col-lg-8 col-lg-offset-2" style="padding: 5%;">
-			<form name="feedbackform" ng-controller="feedbackCtrl" ng-submit="submitfeedbackForm()" id="feedbackform">
+			<form name="feedbackform" id="feedbackform" action="one.php" method="post">
 				<div class="form">
-					<input type="text" ng-model="name" ng-change="text = text.toUpperCase()" name="name" placeholder="Your Name *" required>
-					<input type="email" ng-model="email" ng-change="email = email.toUpperCase()" name="email" placeholder="Your E-mail Address *" required>
-					<textarea ng-model="comment" name="comment" rows="7" placeholder="Type your Message *"></textarea>
-					<input type="submit" id="click" class="clearfix btn" value="Send" ngClick="Submit">
+					<input type="text"  name="name" id="name" placeholder="Your Name *" required>
+					<input type="email"  name="email"id="email" placeholder="Your E-mail Address *" required>
+					<textarea  name="comment" id="comment" rows="7" placeholder="Type your Message *"></textarea>
+					<input type="submit" name="btnSubmit" id="click" value="Submit">
 					    <!--      <button class="clearfix btn" id="click" type="submit" ngClick="Submit" >Send</button>-->
 				</div>
 			</form>
@@ -115,7 +115,43 @@ $('#email').focusout(function(){
 	});
 
 </script>
+<script>
+$('#feedbackform').on('submit', function(e) {
+    e.preventDefault();
+	var name = $('#name').val();
+	var email = $('#email').val();
+	var comment = $('#comment').val();
 
+    swal({
+				title: "Conformation",
+				text: "Are you want to submit",
+				showCancelButton: true,
+				confirmButtonText: "Yes",
+				cancelButtonText: "No",
+				closeOnConfirm: false,
+				showLoaderOnConfirm: true,
+    },
+    function(){
+		$.ajax({
+            type:'post',
+            url:'contact.php',
+            data: {Name:name,Email:email,Comment:comment},
+			success: function(){
+			swal({
+				   title: "Success",
+				   text: "Feedback submitted successfuly",
+				   type: "success",
+				   showCancelButton: false,
+				   cancelButtonText: "Ok",
+				   showConfirmButton: true},
+				   function(){
+						location.reload();
+				   });}		 
+       });    
+    });
+	//location.reload();
+});
+</script>
 <script src="js/angular.min.js"></script>
 	    <script src="js/ngStorage.min.js"></script>
 		<script src="js/ngStorage.js"></script>
