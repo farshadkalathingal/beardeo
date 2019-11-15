@@ -22,7 +22,7 @@
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <script src="js/jquery-1.11.3.min.js"></script>
 </head>
-<body ng-app = "BeardApp" ng-controller="tipsCtrl" class="page1" data-spy="scroll" data-offset="60" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body class="page1" data-spy="scroll" data-offset="60" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <!-- Navigation -->
 <div id="loader">
   <div class="count">100%</div>
@@ -151,11 +151,11 @@ google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.
 			<div class="container-fluid content-section text-center slideanim">
 				<h3 class="animate-box"><label for="email">Join The beardeo Family</label></h3>
 				<p style="font-size:15px; padding: 5%;">We share tips and education for everything grooming & self improvement. In addition to that we deliver updates for company events.</p>
-				<form  name="tipsform" ng-controller="tipsCtrl" ng-submit="submittipsForm()" id="tips">
+				<form  name="tipsform"  id="tips">
 					<div class="form">
 					<i class="fa fa-paper-plane fa-fw"></i>
-					<input type="email" ng-model="email" ng-change="email = email.toUpperCase()" name="email" placeholder=" Your E-mail Address *" required>
-					<input type="submit" id="click" class="clearfix btn" value="Send" ngClick="Submit">
+					<input type="email" id="email" name="email" placeholder=" Your E-mail Address *" required>
+					<input type="submit" id="click" class="clearfix btn" value="Send">
 					<!--<button class="clearfix btn" type="submit" id="click" ngClick="Submit" >Send</button>-->
 					</div>
 				</form>
@@ -218,6 +218,40 @@ $({ Counter: 0 }).animate({ Counter: count.text() }, {
   step: function () {
     count.text(Math.ceil(this.Counter)+ "%");
   }
+});
+</script>
+<script>
+$('#tips').on('submit', function(e) {
+    e.preventDefault();
+	var email = $('#email').val();
+    swal({
+				title: "Conformation",
+				text: "Are you want to submit",
+				showCancelButton: true,
+				confirmButtonText: "Yes",
+				cancelButtonText: "No",
+				closeOnConfirm: false,
+				showLoaderOnConfirm: true,
+    },
+    function(){
+		$.ajax({
+            type:'post',
+            url:'tips.php',
+            data: {Email:email},
+			success: function(){
+			swal({
+				   title: "Success",
+				   text: "Feedback submitted successfuly",
+				   type: "success",
+				   showCancelButton: false,
+				   cancelButtonText: "Ok",
+				   showConfirmButton: true},
+				   function(){
+						location.reload();
+				   });}		 
+       });    
+    });
+	//location.reload();
 });
 </script>
 <script src="js/page.js"></script>
