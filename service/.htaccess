@@ -1,0 +1,79 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+	
+	
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+	RewriteRule ^book/(.*)/([0-9]+)$ api/Application_Book_api.php?rquest=$1&id=$2 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+ 	RewriteRule ^book/(.*)$ api/Application_Book_api.php?rquest=$1 [QSA,NC,L]
+
+  	RewriteCond %{REQUEST_FILENAME} -d
+ 	RewriteRule ^book/(.*)$ api/Application_Book_api.php [QSA,NC,L]
+ 
+	RewriteCond %{REQUEST_FILENAME} -s
+	RewriteRule ^book/(.*)$ api/Application_Book_api.php [QSA,NC,L]
+
+
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+	RewriteRule ^seminar/(.*)/([0-9]+)$ api/Application_Seminar_api.php?rquest=$1&id=$2 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+ 	RewriteRule ^seminar/(.*)$ api/Application_Seminar_api.php?rquest=$1 [QSA,NC,L]
+
+  	RewriteCond %{REQUEST_FILENAME} -d
+ 	RewriteRule ^seminar/(.*)$ api/Application_Seminar_api.php [QSA,NC,L]
+ 
+	RewriteCond %{REQUEST_FILENAME} -s
+	RewriteRule ^seminar/(.*)$ api/Application_Seminar_api.php [QSA,NC,L]
+
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+	RewriteRule ^user/(.*)/([0-9]+)$ api/Application_User_api.php?rquest=$1&id=$2 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+ 	RewriteRule ^user/(.*)$ api/Application_User_api.php?rquest=$1 [QSA,NC,L]
+
+  	RewriteCond %{REQUEST_FILENAME} -d
+ 	RewriteRule ^user/(.*)$ api/Application_User_api.php [QSA,NC,L]
+ 
+	RewriteCond %{REQUEST_FILENAME} -s
+	RewriteRule ^user/(.*)$ api/Application_User_api.php [QSA,NC,L]
+
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+	RewriteRule ^arts/(.*)/([0-9]+)$ api/Application_Arts_api.php?rquest=$1&id=$2 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+ 	RewriteRule ^arts/(.*)$ api/Application_Arts_api.php?rquest=$1 [QSA,NC,L]
+
+  	RewriteCond %{REQUEST_FILENAME} -d
+ 	RewriteRule ^arts/(.*)$ api/Application_Arts_api.php [QSA,NC,L]
+ 
+	RewriteCond %{REQUEST_FILENAME} -s
+	RewriteRule ^arts/(.*)$ api/Application_Arts_api.php [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+	RewriteRule ^sports/(.*)/([0-9]+)$ api/Application_Sports_api.php?rquest=$1&id=$2 [QSA,NC,L]
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+    	RewriteCond %{REQUEST_FILENAME} !-s
+ 	RewriteRule ^sports/(.*)$ api/Application_Sports_api.php?rquest=$1 [QSA,NC,L]
+
+  	RewriteCond %{REQUEST_FILENAME} -d
+ 	RewriteRule ^sports/(.*)$ api/Application_Sports_api.php [QSA,NC,L]
+ 
+	RewriteCond %{REQUEST_FILENAME} -s
+	RewriteRule ^sports/(.*)$ api/Application_Sports_api.php [QSA,NC,L]
+	
+</IfModule>
