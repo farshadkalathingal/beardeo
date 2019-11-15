@@ -1,8 +1,8 @@
-angular.module("kl10", ['ngStorage'])	 
-   /*.controller("LoginPageCtrl",['$scope','$http','$window','$localStorage',
+﻿angular.module("BeardApp", ['ngStorage'])	 
+    .controller("LoginPageCtrl",['$scope','$http','$window','$localStorage',
 	function ($scope,$http,$window,$localStorage) {
 		
-
+		
 		var sname = $localStorage.Name || null;
 		if(sname == null)
 		{
@@ -60,7 +60,8 @@ angular.module("kl10", ['ngStorage'])
 			
 		}*/
 		   	    
-// }])
+ }])
+   
    
    
    .controller('signupCtrl',['$scope','$http','$window','$localStorage','$timeout',
@@ -82,18 +83,16 @@ angular.module("kl10", ['ngStorage'])
 			var Lastname = $scope.form.lastname;
 			var  Email = $scope.form.email;
 			var Password = $scope.form.password;
-			//console.log(Password);
 			var dob = $scope.form.dob;
 			var Gender = $scope.form.gender;
 			
 			$http({
             method : "post",
-			url: "http://farshadkalathingal.pe.hu/kl10/service/user/addUser",
+			url: "http://farshadkalathingal.pe.hu/beard'd/service/user/addUser",
             data: {"Firstname":Firstname,"Lastname":Lastname,"Email":Email,"Password":Password,"DOB":dob,"Sex":Gender},
 			headers : {'Content-Type':'application/x-www-form-urlencoded'}
 			}).then(function successCallback(response) {
 				$localStorage.Name = Firstname;
-				$localStorage.Email = Email;
 				swal({
 				   title: "Success",
 				   text: "Account Created successfuly",
@@ -103,7 +102,7 @@ angular.module("kl10", ['ngStorage'])
 				 //swal("Success","Feedback submitted","success");
 				$timeout(function() { 
 					$scope.displayErrorMsg = true;
-					$window.location.href = 'ideapitching.html';
+					$window.location.href = 'index.html';
 				}, 1500);
 			  }, function errorCallback(response) {
 					swal({
@@ -119,7 +118,7 @@ angular.module("kl10", ['ngStorage'])
 
 	
 
-	/*.controller('emailCtrl',['$scope','$http','$window','$localStorage',
+	.controller('emailCtrl',['$scope','$http','$window','$localStorage',
 	function ($scope,$http,$window,$localStorage) {
 		 $scope.submitEmailForm = function() 
 		{
@@ -164,9 +163,9 @@ angular.module("kl10", ['ngStorage'])
 			var Password = $scope.form.password;
 			console.log(Password);
 			
-		/*	$http({
+			$http({
             method : "post",
-			url: "http://localhost/beard/service/user/resetPassword",
+			url: "http://farshadkalathingal.pe.hu/beard'd/service/user/resetPassword",
             data: {"Email":Email,"Password":Password},
 			headers : {'Content-Type':'application/x-www-form-urlencoded'}
 			}).then(function successCallback(response) {
@@ -187,62 +186,16 @@ angular.module("kl10", ['ngStorage'])
 						text: "Something went wrong try again",
 						type: "error"
 				});
-			  });*/ 
+			  }); 
 
-		/*	});
+			});
 	
 		}
 		}
 	}])
 
-	*/
-	.controller('ideaFormCtrl',['$scope','$http','$window','$localStorage','$timeout',
-	function ($scope,$http,$window,$localStorage,$timeout) {
-		 $scope.submitIdeaForm = function() 
-		{
-			swal({
-				  title: "Conformation",
-				  text: "Are you want to submit",
-				  showCancelButton: true,
-				  confirmButtonText: "Yes",
-				  cancelButtonText: "No",
-				  closeOnConfirm: false,
-				  showLoaderOnConfirm: true,
-				},
-				function(){	
-			var Email = $localStorage.Email;
-			//console.log(Email);
-			var Name = $localStorage.Name;
-			var Idea = $scope.form.idea;
-			$http({
-            method : "post",
-			url: "http://farshadkalathingal.pe.hu/kl10/service/user/addIdea",
-            data: {"Name":Name,"Email":Email,"Idea":Idea},
-			headers : {'Content-Type':'application/x-www-form-urlencoded'}
-			}).then(function successCallback(response) {
-				swal({
-				   title: "Success",
-				   text: "Password Reset successfuly",
-				   type: "success",
-				   showCancelButton: false,
-				   showConfirmButton: false});
-				 //swal("Success","Feedback submitted","success");
-				$timeout(function() { 
-					$scope.displayErrorMsg = true;
-					$window.location.href = 'ideapitching.html';
-				}, 1500);
-			  }, function errorCallback(response) {
-					swal({
-						title: "Error",
-						text: "Something went wrong try again",
-						type: "error"
-				});
-			  });
-			
-			}); 
-
-		}
-	}])
+	
+	
 	.controller('feedbackCtrl',['$scope','$http','$window','$localStorage','$timeout',
 	function ($scope,$http,$window,$localStorage,$timeout) {
 		
@@ -264,7 +217,7 @@ angular.module("kl10", ['ngStorage'])
 			var command = $scope.comment
 			$http({
             method : "post",
-			url: "http://farshadkalathingal.pe.hu/kl10/service/user/feedBackAdd",
+			url: "http://farshadkalathingal.pe.hu/beard'd/service/user/feedBackAdd",
             data: {"name":name,"email":email,"command":command},
 			headers : {'Content-Type':'application/x-www-form-urlencoded'}
 			}).then(function successCallback(response) {
@@ -293,7 +246,7 @@ angular.module("kl10", ['ngStorage'])
 
 	}])
 
-/*.controller('tipsCtrl',['$scope','$http','$window','$localStorage','$timeout',
+.controller('tipsCtrl',['$scope','$http','$window','$localStorage','$timeout',
 	function ($scope,$http,$window,$localStorage,$timeout) {
 		
 		 $scope.submittipsForm = function() 
@@ -312,7 +265,7 @@ angular.module("kl10", ['ngStorage'])
 			var email = $scope.email
 			$http({
             method : "post",
-			url: "http://localhost/beard/service/user/addEmail",
+			url: "http://farshadkalathingal.pe.hu/beard'd/service/user/addEmail",
             data: {"email":email},
 			headers : {'Content-Type':'application/x-www-form-urlencoded'}
 			}).then(function successCallback(response) {
@@ -339,38 +292,7 @@ angular.module("kl10", ['ngStorage'])
 		});
 		}
 
-	}])*/
-	.controller('ideaCtrl',['$scope','$http','$window','$localStorage','$timeout',
-	function ($scope,$http,$window,$localStorage,$timeout) {
-		var Email = $localStorage.Email || null;
-		console.log(Email);
-		if(Email != null)
-		{
-			 $http({     
-            method : "post",
-			url: 'http://farshadkalathingal.pe.hu//kl10/service/user/getIdea',
-			headers : {'Content-Type':'application/x-www-form-urlencoded'}
-			}).then(function successCallback(response) {
-				$scope.ideas = response.data;
-			  }, function errorCallback(response) {
-			  });
-	}
-			else
-			{
-				swal({
-					title: "Warning",
-					text: "Sign in needed !! please Login",
-					type: "warning",
-					showCancelButton: false,
-					showConfirmButton: false});
-					$timeout(function() { 
-						$scope.displayErrorMsg = true;
-						$window.location.href = 'login.html';
-					}, 2000);	
-			}
-		
 	}])
-
 	.controller('loginCtrl',['$scope','$http','$window','$localStorage','$timeout',
 	function ($scope,$http,$window,$localStorage,$timeout) {
 	   
@@ -387,12 +309,11 @@ angular.module("kl10", ['ngStorage'])
 				},
 				function(){	
 			var  email = $scope.form.email;
-			//console.log(email);
 			var password = $scope.form.password;
-			//console.log(password);
+			
 			$http({
             method : "post",
-			url: "http://farshadkalathingal.pe.hu/kl10/service/user/loginUser",
+			url: "http://farshadkalathingal.pe.hu/beard'd/service/user/loginUser",
             data: {"Email":email,"Password":password},
 			headers : {'Content-Type':'application/x-www-form-urlencoded'}
 			}).then(function successCallback(response) {
@@ -412,7 +333,7 @@ angular.module("kl10", ['ngStorage'])
 					//swal("Success","Feedback submitted","success");
 					$timeout(function() { 
 					$scope.displayErrorMsg = true;
-					$window.location.href = 'ideapitching.html';
+					$window.location.href = 'index.html';
 					}, 1500);
 					
                 }
@@ -436,35 +357,10 @@ angular.module("kl10", ['ngStorage'])
 					  text: "Something went wrong try again",
 					  type: "error"
 					});
-			  });	
+			  }); 	
 	       }); 
     }
-   }])
-   .controller('logoutCtrl',['$scope','$http','$window','$localStorage','$timeout',
-	function ($scope,$http,$window,$localStorage,$timeout) {
-	   
-	   $scope.Submit = function() 
-		{
-			swal({
-				 	  title: "Conformation",
-				  text: "Are you want to submit",
-				  showCancelButton: true,
-				  confirmButtonText: "Yes",
-				  cancelButtonText: "No",
-				  closeOnConfirm: false,
-				  showLoaderOnConfirm: true,
-				},
-				function(){	
-			$localStorage.Email = null;
-			$localStorage.Name = null;
-					$timeout(function() { 
-					$scope.displayErrorMsg = true;
-					$window.location.href = 'ideapitching.html';
-					}, 1500);
-					
-			}); 
-	}
-   }])
+   }]);
 /*
 .controller('ShowStudItem',['$scope','$http','$window','$localStorage',
 	function ($scope,$http,$window,$localStorage) {
